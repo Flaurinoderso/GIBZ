@@ -24,10 +24,10 @@ Install-ADDSDomain `
     -DomainType "ChildDomain" `
     -InstallDns `
     -LogPath "C:\Windows\NTDS" `
-    -NewDomainName "Zug" `
-    -NewDomainNetbiosName "ZUG" `
+    -NewDomainName "Cham" `
+    -NewDomainNetbiosName "CHAM" `
     -ParentDomainName "M159.local" `
-    -SiteName "Zug" `
+    -SiteName "Cham" `
     -SysvolPath "C:\Windows\SYSVOL" `
     -Force
 
