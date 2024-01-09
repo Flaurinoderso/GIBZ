@@ -1,0 +1,12 @@
+{
+  "services": [
+    "service1",
+    "service2",
+    "service3"
+  ],
+  "hosts": [
+    "host1",
+    "host2",
+    "host3"
+  ]
+}
