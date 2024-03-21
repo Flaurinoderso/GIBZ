@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Store</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    main {
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .product-item {
+      width: 30%;
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .product-item img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .product-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .product-item p {
+      margin-bottom: 10px;
+    }
+    .product-item button {
+      background-color: #898d8a;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .product-item button:hover {
+      background-color: #898d8a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Masterpiece Records</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Vinyl</a>
+    <a href="contact.html">Hit Us Up</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Vinyl available</h2>
+      <div class="product">
+        <div class="product-item" id="product1">
+          <img src="https://urbando.dk/wp-content/uploads/2021/04/8599-nas-illmatic-LP-5a28e6e1b9f47.jpg" alt="Illmatic">
+          <h3>Illmatic by NAS, Vinyl</h3>
+          <p>10/10 Album, go listen to sum OG</p>
+          <p>Price: $50.00</p>
+          <button onclick="addToCart('Illmatic', 50.00)">Take It Home</button>
+        </div>
+        <div class="product-item" id="product2">
+          <img src="data:image/jpeg;base64,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" alt="MannBeisstHund">
+          <h3>MannBeisstHund by OGKeemo, Vinyl</h3>
+          <p>some german underground heat</p>
+          <p>Price: $79.99</p>
+          <button onclick="addToCart('MannBeisstHund', 79.99)">Take It Home</button>
+        </div>
+        <div class="product-item" id="product3">
+          <img src="https://m.media-amazon.com/images/I/51XMOv99OaL._UXNaN_FMjpg_QL85_.jpg" alt="">
+          <h3>DeChliniBrüeder by OGFlorin, Vinyl</h3>
+          <p>an album, str8 ouda Herti, 6300 Zug</p>
+          <p>Price: $89.00</p>
+          <button onclick="addToCart('DeChliniBrüeder', 89.00)">Take It Home</button>
+        </div>
+        <div class="product-item" id="product3">
+            <img src="https://upload.wikimedia.org/wikipedia/en/6/63/SnoopDoggyDoggDoggystyle.jpg" alt="">
+            <h3>Doggystyle by SnoopDog, Vinyl</h3>
+            <p>Another 10/10</p>
+            <p>Price: $49.00</p>
+            <button onclick="addToCart('Doggystyle', 49.00)">Take It Home</button>
+          </div>
+          <div class="product-item" id="product3">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/36/Prayers_for_paris.jpg" alt="">
+            <h3>Pray for Paris by Westside Gunn, Vinyl</h3>
+            <p>GRRRRRRRRRRRRR, Eyoooooooooo</p>
+            <p>Price: $250.00</p>
+            <button onclick="addToCart('PrayForParis', 250.00)">Take It Home</button>
+          </div>
+          <div class="product-item" id="product3">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/CKFinallyRichStandard.png" alt="">
+            <h3>Finally Rich by Chief Keef, Vinyl</h3>
+            <p>Where you from? O BLOCK. What do you do 4 a living? BANG BANG. Whats you name? SOSA</p>
+            <p>Price: $300.00</p>
+            <button onclick="addToCart('PrayForParis', 300.00)">Take It Home</button>
+          </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; HertiGhettoGShit. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript for handling cart functionality
+    let cart = [];
+
+    function addToCart(productName, price) {
+      cart.push({ name: productName, price: price });
+      alert(productName + " added to cart!");
+      console.log(cart); // You can remove this line; it's just for demonstration
+    }
+  </script>
+</body>
+</html>
