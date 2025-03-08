@@ -1,9 +1,11 @@
+# import modules
 Import-Module ActiveDirectory
 
 $csvPath = "C:\Temp\Aufgabe_PSScript.csv"
 $csvContent = Get-Content -Path $csvPath -Encoding default
 $csvData = $csvContent | ConvertFrom-Csv 
 
+# Create Active Directory User from csv
 foreach ($user in $csvData) {
  $password = ConvertTo-SecureString -Int "Init1234" -AsPlainText -Force
  
